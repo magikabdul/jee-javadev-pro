@@ -20,12 +20,12 @@ public class SystemTimeProvider implements TimeProvider {
 
     @PostConstruct
     public void postConstruct(){
-        log.info(getClass().getSimpleName() + " is constructed");
+        log.info(getClass().getSimpleName() + ": postConstruct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        log.info(getClass().getSimpleName() + " is going down");
+        log.info(getClass().getSimpleName() + ": preDestroy");
     }
 
 }

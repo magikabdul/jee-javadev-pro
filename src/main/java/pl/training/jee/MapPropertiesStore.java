@@ -25,22 +25,22 @@ public class MapPropertiesStore implements PropertiesStore {
 
     @PrePassivate
     public void prePassivate() {
-        log.info(getClass().getSimpleName() + " is passivating");
+        log.info(getClass().getSimpleName() + ": prePassivate");
     }
 
     @PostActivate
     public void postActivate() {
-        log.info(getClass().getSimpleName() + " is activaing");
+        log.info(getClass().getSimpleName() + ": postActivate");
     }
 
     @PostConstruct
     public void postConstruct(){
-        log.info(getClass().getSimpleName() + " is constructed");
+        log.info(getClass().getSimpleName() + ": postConstruct");
     }
 
     @PreDestroy
     public void preDestroy() {
-        log.info(getClass().getSimpleName() + " is going down");
+        log.info(getClass().getSimpleName() + ": preDestroy");
     }
 
 }
