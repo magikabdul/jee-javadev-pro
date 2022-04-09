@@ -11,8 +11,9 @@
 ./jboss-cli.sh
 connect
 
-4. Utworzyć kolejkę i temat  jms
+4. Utworzyć kolejkę i temat jms
 
+/subsystem=messaging-activemq/server=default/jms-queue=Mail:add(entries=[java:jboss/exported/jms/queue/Mail])
 /subsystem=messaging-activemq/server=default/jms-topic=Messages:add(entries=[java:jboss/exported/jms/topic/Messages])
 
 5. Wyłączyć security na poziomie jms
