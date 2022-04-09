@@ -15,7 +15,7 @@ public class HelloServlet extends HttpServlet {
     private static final String NAME_ATTRIBUTE = "name";
     private static final String TIMESTAMP_ATTRIBUTE = "timestamp";
 
-    @EJB(beanName = "FakeTimeProvider")
+    @EJB(beanName = "SystemTimeProvider")
     private TimeProvider timeProvider;
 
     @Override

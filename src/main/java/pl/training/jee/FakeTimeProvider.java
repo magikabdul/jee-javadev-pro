@@ -4,8 +4,8 @@ import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import java.time.LocalDateTime;
 
-@Startup
-@Singleton
+//@Startup
+//@Singleton
 public class FakeTimeProvider implements TimeProvider {
 
     @Override

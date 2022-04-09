@@ -6,21 +6,31 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.ejb.PostActivate;
 import javax.ejb.PrePassivate;
+import javax.ejb.Remove;
 import javax.ejb.Stateful;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @Stateful
 @Log
 public class MapPropertiesStore implements PropertiesStore {
 
+    private final Map<String, String> properties = new HashMap<>();
+
     @Override
     public void put(String key, String value) {
-
+        properties.put(key, value);
     }
 
     @Override
     public Optional<String> get(String key) {
-        return Optional.empty();
+        return Optional.ofNullable(properties.get(key));
+    }
+
+    @Remove
+    @Override
+    public void close() {
     }
 
     @PrePassivate
