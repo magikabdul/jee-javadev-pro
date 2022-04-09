@@ -11,22 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<%!
-    private static final String NAME_PARAM = "name";
-%>
-
-<%
-    String name =  request.getParameter(NAME_PARAM);
-    if (name == null) {
-        name = "";
-    }
-    out.println(prepareResponse(name));
-%>
-
-<%!
-    private String prepareResponse(String name) {
-        return "<html><head><title>JEE</title></head><body><p>Hello " + name + "</p></body></html>";
-    }
-%>
+<p>
+    Hello ${requestScope.name} (${requestScope.timestamp})
+</p>
 </body>
 </html>
