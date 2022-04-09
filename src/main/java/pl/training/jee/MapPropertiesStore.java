@@ -10,7 +10,6 @@ import javax.ejb.Remove;
 import javax.ejb.Stateful;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Optional;
 
 @Stateful
 @Log
@@ -24,8 +23,8 @@ public class MapPropertiesStore implements PropertiesStore {
     }
 
     @Override
-    public Optional<String> get(String key) {
-        return Optional.ofNullable(properties.get(key));
+    public String get(String key) {
+        return properties.get(key);
     }
 
     @Remove
