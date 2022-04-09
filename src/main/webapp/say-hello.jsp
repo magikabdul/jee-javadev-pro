@@ -12,7 +12,7 @@
 </head>
 <body>
 <p>
-    Hello ${requestScope.name} (${requestScope.timestamp})
+    Hello ${requestScope.name}
 </p>
 </body>
 </html>

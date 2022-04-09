@@ -1,6 +1,5 @@
 package pl.training.jee;
 
-import javax.ejb.EJB;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,10 +12,6 @@ public class HelloServlet extends HttpServlet {
 
     private static final String NAME_PARAM = "name";
     private static final String NAME_ATTRIBUTE = "name";
-    private static final String TIMESTAMP_ATTRIBUTE = "timestamp";
-
-    @EJB(beanName = "FakeTimeProvider")
-    private TimeProvider timeProvider;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,7 +20,6 @@ public class HelloServlet extends HttpServlet {
             name = "";
         }
         request.setAttribute(NAME_ATTRIBUTE, name);
-        request.setAttribute(TIMESTAMP_ATTRIBUTE, timeProvider.getTimestamp());
         var dispatcher = getServletContext().getRequestDispatcher("/say-hello.jsp");
         dispatcher.forward(request, response);
     }
