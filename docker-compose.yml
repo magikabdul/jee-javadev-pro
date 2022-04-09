@@ -10,5 +10,5 @@ services:
       - POSTGRES_PASSWORD=admin
       - PGDATA=/data
     command: ["postgres", "-c", "log_statement=all"]
-    #volumes:
+    # volumes:
     #  - ./data:/data
