@@ -1,8 +1,8 @@
 package pl.training.shop.payments.adapters.persistence;
 
-import jakarta.inject.Inject;
-import jakarta.inject.Singleton;
-import jakarta.transaction.Transactional;
+import javax.inject.Inject;
+import javax.inject.Singleton;
+import javax.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import pl.training.shop.commons.Page;
 import pl.training.shop.commons.ResultPage;

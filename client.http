@@ -1,0 +1,20 @@
+POST http://localhost:8080/jee/api/payments
+Content-Type: application/json
+Accept: application/json
+
+{
+  "requestId": 1,
+  "value": "200 PLN"
+}
+
+###
+
+GET http://localhost:8080/jee/api/payments/bb5e0d69-5103-4f05-b0e3-4ffbec209a71
+Content-Type: application/json
+Accept: application/json
+
+###
+
+GET http://localhost:8080/jee/api/payments/confirmed
+Content-Type: application/json
+Accept: application/json

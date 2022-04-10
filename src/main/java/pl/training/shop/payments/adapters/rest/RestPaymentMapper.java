@@ -13,7 +13,7 @@ import pl.training.shop.payments.domain.PaymentStatus;
 
 import java.util.List;
 
-@Mapper(uses = FastMoneyMapper.class)
+@Mapper(componentModel = "cdi", uses = FastMoneyMapper.class)
 public interface RestPaymentMapper {
 
     @Mapping(source = "requestId", target = "id")

@@ -1,6 +1,6 @@
 package pl.training.shop.payments.adapters;
 
-import jakarta.inject.Singleton;
+import javax.inject.Singleton;
 import pl.training.shop.payments.ports.IdGenerator;
 
 import java.util.UUID;

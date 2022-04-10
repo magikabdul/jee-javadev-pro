@@ -1,24 +1,27 @@
 package pl.training.shop.payments.adapters.rest;
 
-import jakarta.inject.Inject;
-import jakarta.ws.rs.*;
-import jakarta.ws.rs.core.Context;
-import jakarta.ws.rs.core.Response;
-import jakarta.ws.rs.core.UriInfo;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import pl.training.shop.commons.Page;
 import pl.training.shop.payments.domain.PaymentStatus;
 import pl.training.shop.payments.ports.PaymentService;
 
+import javax.inject.Inject;
+import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
+import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 
 @Path("payments")
-@RequiredArgsConstructor(onConstructor_ = @Inject)
 public class PaymentController {
 
-    private final PaymentService paymentService;
-    private final RestPaymentMapper paymentMapper;
+    @Inject
+    @Setter
+    private PaymentService paymentService;
+    @Inject
+    @Setter
+    private RestPaymentMapper paymentMapper;
+
     @Context
     @Setter
     private UriInfo uriInfo;

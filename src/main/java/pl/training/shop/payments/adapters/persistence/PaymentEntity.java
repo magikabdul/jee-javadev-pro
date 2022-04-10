@@ -1,8 +1,8 @@
 package pl.training.shop.payments.adapters.persistence;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.NamedQuery;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQuery;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
