@@ -2,32 +2,33 @@ package pl.training.shop.payments.adapters.rest;
 
 import lombok.Setter;
 import pl.training.shop.commons.Page;
+import pl.training.shop.commons.rest.BinaryMapper;
 import pl.training.shop.payments.domain.PaymentStatus;
 import pl.training.shop.payments.ports.PaymentService;
 
 import javax.inject.Inject;
+import javax.validation.Valid;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
+import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.net.URI;
 
 @Path("payments")
+@Setter
 public class PaymentController {
 
     @Inject
-    @Setter
     private PaymentService paymentService;
     @Inject
-    @Setter
     private RestPaymentMapper paymentMapper;
-
     @Context
-    @Setter
     private UriInfo uriInfo;
 
+    // @Consumes(MediaType.APPLICATION_JSON)
     @POST
-    public Response process(PaymentRequestDto paymentRequestDto) {
+    public Response process(@Valid PaymentRequestDto paymentRequestDto) {
         var paymentRequest = paymentMapper.toDomain(paymentRequestDto);
         var payment = paymentService.process(paymentRequest);
         var paymentDto = paymentMapper.toDto(payment);
@@ -36,6 +37,7 @@ public class PaymentController {
                 .build();
     }
 
+    // @Produces(BinaryMapper.MEDIA_TYPE)
     @GET
     @Path("{id:\\w{8}-\\w{4}-\\w{4}-\\w{4}-\\w{12}}")
     public Response getById(@PathParam("id") String id) {

@@ -6,7 +6,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.ValueMapping;
 import pl.training.shop.commons.FastMoneyMapper;
 import pl.training.shop.commons.ResultPage;
-import pl.training.shop.commons.ResultPageDto;
+import pl.training.shop.commons.rest.ResultPageDto;
 import pl.training.shop.payments.domain.Payment;
 import pl.training.shop.payments.domain.PaymentRequest;
 import pl.training.shop.payments.domain.PaymentStatus;

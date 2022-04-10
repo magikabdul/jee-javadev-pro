@@ -1,6 +1,6 @@
 POST http://localhost:8080/jee/api/payments
 Content-Type: application/json
-Accept: application/json
+Accept: application/xml
 
 {
   "requestId": 1,
@@ -9,7 +9,7 @@ Accept: application/json
 
 ###
 
-GET http://localhost:8080/jee/api/payments/bb5e0d69-5103-4f05-b0e3-4ffbec209a71
+GET http://localhost:8080/jee/api/payments/bb5e0d69-5103-4f05-b0e3-4ffeec209a71
 Content-Type: application/json
 Accept: application/json
 
