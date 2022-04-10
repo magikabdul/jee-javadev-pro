@@ -20,4 +20,6 @@ public class PaymentsConfiguration {
         return PAYMENT_FACTORY.paymentsService(idGenerator, paymentRepository);
     }
 
+
+
 }
