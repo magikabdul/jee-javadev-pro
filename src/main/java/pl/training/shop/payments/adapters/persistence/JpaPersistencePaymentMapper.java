@@ -4,7 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import pl.training.shop.payments.domain.Payment;
 
-@Mapper(componentModel = "cdi")
+@Mapper
 public interface JpaPersistencePaymentMapper {
 
     @Mapping(target = "value", expression = "java(java.math.BigDecimal.valueOf(payment.getValue().getNumber().doubleValueExact()))")

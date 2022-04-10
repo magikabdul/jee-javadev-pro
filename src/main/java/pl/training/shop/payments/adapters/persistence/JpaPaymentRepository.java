@@ -1,5 +1,6 @@
 package pl.training.shop.payments.adapters.persistence;
 
+import jakarta.inject.Singleton;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import pl.training.shop.commons.ResultPage;
 
 import java.util.Optional;
 
+@Singleton
 public class JpaPaymentRepository {
 
     @Setter

@@ -1,5 +1,7 @@
 package pl.training.shop.payments.adapters.persistence;
 
+import jakarta.inject.Inject;
+import jakarta.inject.Singleton;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import pl.training.shop.commons.Page;
@@ -11,7 +13,8 @@ import pl.training.shop.payments.ports.PaymentRepository;
 import java.util.Optional;
 
 @Transactional
-@RequiredArgsConstructor
+@Singleton
+@RequiredArgsConstructor(onConstructor_ = @Inject)
 public class JpaPaymentRepositoryAdapter implements PaymentRepository {
 
     private final JpaPaymentRepository paymentRepository;
